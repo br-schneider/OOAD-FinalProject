@@ -9,11 +9,9 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
         crossorigin="anonymous"
   >
-  <link rel="stylesheet" th:href="@{/public/main.css}" />
-  <link rel="stylesheet" th:href="@{/public/login.css}" />
 
-<!--  <link rel="stylesheet" href="/public/main.css">-->
-<!--  <link rel="stylesheet" href="/public/login.css">-->
+  <link rel="stylesheet" th:href="@{/stylesheets/main.css}" />
+
 </head>
 
 <body id="searchBody">
@@ -21,7 +19,7 @@
   <div class="container justify-content-center" >
     <div class="jumbotron p-4 p-md-5 text-dark rounded bg-white">
     <a href="/" class="search" >
-      <img src="https://cdn.glitch.com/70a0db66-17a5-4a74-aab0-f4cb6c2a25ad%2Fcar.svg?v=1605592618206" width="72" height="72">
+      <img th:src="@{/img/car.svg}" width="72" height="72"/>
     </a>
     <h2>Welcome to Search Engine!</h2>
 
