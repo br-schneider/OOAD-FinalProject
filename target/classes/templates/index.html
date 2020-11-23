@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">-->
+
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+        crossorigin="anonymous"
+  >
+
+  <link rel="stylesheet" href="../public/stylesheets/main.css">
+  <link rel="stylesheet" href="../public/stylesheets/login.css">
+</head>
+
+<body id="searchBody">
+
+  <div class="container justify-content-center" >
+    <div class="jumbotron p-4 p-md-5 text-dark rounded bg-white">
+    <a href="/" class="search" >
+      <img src="https://cdn.glitch.com/70a0db66-17a5-4a74-aab0-f4cb6c2a25ad%2Fcar.svg?v=1605592618206" width="72" height="72">
+    </a>
+    <h2>Welcome to Search Engine!</h2>
+
+      <form class="Search" action="action_page.php" id="carSearch">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+   </div>
+
+
+</body>
+</html>
