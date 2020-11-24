@@ -71,13 +71,9 @@ public class Main {
       Statement stmt = connection.createStatement();
       ResultSet rs = stmt.executeQuery(query);
 
-      String type ="";
-      String make ="";
-      String model2 ="";
-      String color ="";
-      int year = 0;
-      int mileage = 0;
-      double price = 0.0;
+      String type, make, model2, color;
+      int year, mileage;
+      double price;
 
       while (rs.next()) {
         type = rs.getString("type");
@@ -91,6 +87,7 @@ public class Main {
         Car testCar = new Car(type, make, model2, year, mileage, color, price);
         carsList.add(testCar);
       }
+
       return carsList;
 
     } catch (Exception e) {
@@ -121,6 +118,7 @@ public class Main {
     model.put("car3Price", dbCarList.get(2).printPricing());
     return "car_inventory";
   }
+
 
   @RequestMapping("/car_profile")
   String car_profile(Map<String, Object> model) {
