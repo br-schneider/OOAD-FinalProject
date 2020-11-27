@@ -7,8 +7,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -38,6 +43,38 @@ public class Main {
   @RequestMapping("/")
   String index() {
     return "index";
+  }
+
+//  @RequestMapping("/search")
+//  String search(@RequestParam("fullSearch") String search, Model m)
+//  {
+//
+//    String msg="this is in the function "+ search;
+//    //add a message to the model
+//    m.addAttribute("message", msg);
+//    return "search_results";
+//
+//
+//  }
+
+
+
+
+    @RequestMapping(path="/search", produces=MediaType.TEXT_PLAIN_VALUE)
+    @ResponseBody
+    public String processForm(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Model m) {
+
+      m.addAttribute(FULL_SEARCH);
+
+      return "/search_results";
+    }
+
+
+  @RequestMapping("/search_results")
+  String search_results() {
+    
+
+    return "search_results";
   }
 
 
@@ -118,6 +155,7 @@ public class Main {
     model.put("car3Price", dbCarList.get(2).printPricing());
     return "car_inventory";
   }
+
 
 
   @RequestMapping("/car_profile")

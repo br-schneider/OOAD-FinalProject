@@ -7,8 +7,6 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
         crossorigin="anonymous"
   >
-
-  <link rel="stylesheet" th:href="@{/stylesheets/main.css}" />
   <link rel="stylesheet" th:href="@{/stylesheets/login.css}" />
 
   <title>Login</title>
@@ -17,7 +15,7 @@
 <body>
 
 
-<div class="container">
+<div class="container" id="nav">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark rounded">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 
@@ -27,7 +25,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/complete_inventory">Complete Inventory</a>
+          <a class="nav-link" href="/car_inventory">Inventory</a>
         </li>
       </ul>
 
@@ -40,49 +38,54 @@
           <a class="nav-link" href="/login">Login</a>
         </li>
       </ul>
-
     </div>
   </nav>
 </div>
 
 
-<div class="container">
-  <div class="jumbotron">
+<div class="container justify-content-center" >
+  <div class="jumbotron p-4 p-md-5 text-dark rounded bg-white">
+
+
+    <img th:src="@{/img/car.svg}" width="72" height="72" id="car-login-img"/>
+
+    <h3>Welcome home!</h3>
+
     <form class="form-signin">
-      <img th:src="@{/img/car.svg}" width="72" height="72"/>
 
-        <h3>Welcome home!</h3>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input
-                type="email"
-                id="inputEmail"
-                class="form-control"
-                placeholder="Email address"
-                autofocus
-        />
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input
-                type="password"
-                id="inputPassword"
-                class="form-control"
-                placeholder="Password"
-        />
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input
+              type="email"
+              id="inputEmail"
+              class="form-control"
+              placeholder="Email address"
+              autofocus
+      />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input
+              type="password"
+              id="inputPassword"
+              class="form-control"
+              placeholder="Password"
+      />
 
-        <div>
-            <button class="btn btn-sm btn-outline-dark" onclick="" role="button">
-                Forgot Password
-            </button>
-          <button>
-            <a href="/create_account" class="btn btn-sm btn-outline-dark">
-            Create Account
-          </a>
-         </button>
-        </div>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Sign in
-        </button>
     </form>
+
+
+    <div class="btn-group">
+      <button class="btn" onclick="" role="button" id="forgot_password_button">
+        <a class="btn btn-sm btn-outline-dark" href="/create_account" >Forgot Password</a>
+      </button>
+      <button class="btn" onclick="" role="button" id="create_account_button">
+        <a class="btn btn-sm btn-outline-dark" href="/create_account" >Create Account</a>
+      </button>
+    </div>
+
+    <button class="btn btn-lg btn-primary" type="submit">
+      Sign in
+    </button>
+
+
   </div>
 </div>
 

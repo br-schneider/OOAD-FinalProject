@@ -71,10 +71,14 @@
 
         <h2>Welcome to Search Engine!</h2>
 
+<!--        <form th:action="@{search}">-->
+
+        <form action="search">
+
         <div class="btn-group">
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="typeFilter">Type</button>
+                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="typeFilter" name="typeFilter">Type</button>
                 <div class="dropdown-menu" id="typeOptions">
                     <a class="dropdown-item" href="#">SUV</a>
                     <a class="dropdown-item" href="#">Sedan</a>
@@ -84,7 +88,7 @@
 
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="makeFilter">Make</button>
+                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="makeFilter" name="makeFilter">Make</button>
                 <div class="dropdown-menu" id="makeOptions">
                     <a class="dropdown-item" href="#">Toyota</a>
                     <a class="dropdown-item" href="#">BMW</a>
@@ -94,7 +98,7 @@
 
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="yearFilter">Year</button>
+                <button class="btn btn-secondary dropdown-toggle status" data-toggle="dropdown" id="yearFilter" name="yearFilter">Year</button>
                 <div class="dropdown-menu" id="yearOptions">
                     <a class="dropdown-item" href="#">2020</a>
                     <a class="dropdown-item" href="#">2019</a>
@@ -108,11 +112,15 @@
                 </div>
             </div>
 
+            <input type="text" name="FULL_SEARCH"/>
 
 
-            <button type="button" class="btn btn-outline-dark rounded">Search</button>
+
+            <button type="submit" class="btn btn-outline-dark rounded" name="submit" href="/search_results">Search</button>
 
         </div>
+
+        </form>
 
     </div>
 

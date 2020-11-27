@@ -1,7 +1,49 @@
-car-login-img {
+#car-login-img {
     position: center;
 }
 
+body {
+    background-color: #4F624F;
+}
+
+h2 {
+    position: center;
+    color: black;
+}
+
+
+h3 {
+    position: center;
+    color: black;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    margin-right: 10px;
+}
+
+.navbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.jumbotron {
+    background: #ffffff;
+    color: white;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.centering {
+    text-align: center;
+}
 
 .form-signin {
     width: 100%;
