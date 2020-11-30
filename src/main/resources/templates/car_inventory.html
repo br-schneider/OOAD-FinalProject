@@ -11,6 +11,34 @@
 
 </head>
 <body>
+<div class="container" id="nav">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark rounded">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/car_inventory">Inventory</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
 <div class="container">
     <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -21,26 +49,10 @@
             <p class="mb-1" th:text="${car1Description}"></p>
             <small th:text="${car1Price}"></small>
         </a>
-
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1" th:text="${car2Title}"></h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1" th:text="${car2Description}"></p>
-            <small class="text-muted" th:text="${car2Price}"></small>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1" th:text="${car3Title}">g</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1" th:text="${car3Description}"></p>
-            <small class="text-muted" th:text="${car3Price}"></small>
-        </a>
     </div>
 
 </div>
+
+
 </body>
 </html>

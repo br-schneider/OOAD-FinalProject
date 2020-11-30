@@ -32,16 +32,18 @@ public class Main {
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
-
   @Autowired
   private DataSource dataSource;
+
+
+  //////////////////////////////////////////////Start Of Where to Work//////////////////////////////////////////////////
 
 
   @RequestMapping("/")
   String index() {
     return "index";
   }
-  
+
 
   @RequestMapping("/search")
   public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Map<String, Object> model) {
@@ -77,7 +79,7 @@ public class Main {
     List<Car> carsList = new ArrayList<Car>();
 
     try (Connection connection = dataSource.getConnection()) {
-      String query = "SELECT * FROM CAR_INVENTORY";
+      String query = "SELECT * FROM car_inventory";
       Statement stmt = connection.createStatement();
       ResultSet rs = stmt.executeQuery(query);
 
@@ -113,19 +115,22 @@ public class Main {
   String car_inventory(Map<String, Object> model) {
     List<Car> dbCarList = getCarsFromDB();
 
-    ArrayList<String> output = new ArrayList<String>();
+//    ArrayList<String> output = new ArrayList<String>();
 
     model.put("car1Title", dbCarList.get(0).printMakeModelYear());
     model.put("car1Description", dbCarList.get(0).quickDescription());
     model.put("car1Price", dbCarList.get(0).printPricing());
 
-    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
-    model.put("car2Description", dbCarList.get(1).quickDescription());
-    model.put("car2Price", dbCarList.get(1).printPricing());
+//    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
+//    model.put("car2Description", dbCarList.get(1).quickDescription());
+//    model.put("car2Price", dbCarList.get(1).printPricing());
+//
+//    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
+//    model.put("car3Description", dbCarList.get(2).quickDescription());
+//    model.put("car3Price", dbCarList.get(2).printPricing());
 
-    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
-    model.put("car3Description", dbCarList.get(2).quickDescription());
-    model.put("car3Price", dbCarList.get(2).printPricing());
+
+
     return "car_inventory";
   }
 
@@ -149,6 +154,10 @@ public class Main {
   String login(Map<String, Object> model) {
     return "login";
   }
+
+
+
+ //////////////////////////////////////////////End Of Where to Work/////////////////////////////////////////////////////
 
 
   @Bean
