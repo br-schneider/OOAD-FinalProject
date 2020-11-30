@@ -10,43 +10,65 @@
 
 </head>
 <body>
+  <div class="container" id="nav">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark rounded">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/car_inventory">Inventory</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<div class="container justify-content-center" >
+  <div class="jumbotron p-4 p-md-5 text-dark rounded bg-white">
 
 
-<div class="container">
-    <div class="jumbotron">
-        <form class="form-signin">
-            <img
-                    class="mb-4"
-                    src="https://cdn.glitch.com/70a0db66-17a5-4a74-aab0-f4cb6c2a25ad%2Fcar.svg?v=1605592618206"
-                    alt=""
-                    width="72"
-                    height="72"
-                    id="car-login-img"
-            />
+    <img th:src="@{/img/car.svg}" width="72" height="72" id="car-login-img"/>
 
-            <h3>Create Account</h3>
-            <label for="inputEmail" class="sr-only">Username</label>
-            <input
-                    type="email"
-                    id="inputEmail"
-                    class="form-control"
-                    placeholder="Username"
-                    autofocus
-            />
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input
-                    type="password"
-                    id="inputPassword"
-                    class="form-control"
-                    placeholder="Password"
-            />
+    <form class="form-signin">
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Create Account
-            </button>
-        </form>
-    </div>
+      <h3>Create Account</h3>
+      <label for="inputEmail" class="sr-only">Username</label>
+      <input
+              type="email"
+              id="inputEmail"
+              class="form-control"
+              placeholder="Username"
+              autofocus
+      />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input
+              type="password"
+              id="inputPassword"
+              class="form-control"
+              placeholder="Password"
+      />
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Create Account
+      </button>
+    </form>
+
+
+  </div>
 </div>
 
 </body>
-</html>

@@ -149,6 +149,11 @@ public class Main {
     return "create_account";
   }
 
+  @RequestMapping("/forgot_password")
+  String forgot_password(Map<String, Object> model) {
+
+    return "forgot_password";
+  }
 
   @RequestMapping("/login")
   String login(Map<String, Object> model) {
