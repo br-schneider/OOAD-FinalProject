@@ -57,11 +57,11 @@ public class Main {
     car1.setPrice(17999.99);
 
 
-    model.put("1", car1.getMake());
-    model.put("2", car1.getColor());
-    model.put("3", car1.getYear());
-    model.put("4", car1.getPrice());
-    model.put("5", car1.getMileage());
+    model.put("message1", car1.getMake());
+    model.put("message2", car1.getColor());
+    model.put("message3", car1.getYear());
+    model.put("message4", car1.getPrice());
+    model.put("message5", car1.getMileage());
 
     Extra etest = new Extra("sony", 120);
 
@@ -70,8 +70,8 @@ public class Main {
     Extra test = new Extra("enkei",50);
     Rims rims1 = new Rims(test);
 
-    model.put("6", mtest.getCost());
-    model.put("7", rims1.getCost());
+    model.put("message6", mtest.getCost());
+    model.put("message7", rims1.getCost());
 
 
     return "index";
