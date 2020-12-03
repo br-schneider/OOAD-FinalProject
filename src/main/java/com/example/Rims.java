@@ -1,3 +1,4 @@
+package com.example;
 
 public class Rims extends Extra {
 	private Extra extra;

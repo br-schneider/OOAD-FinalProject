@@ -1,3 +1,4 @@
+package com.example;
 
 public class Stereo extends Extra {
 	private Extra extra;

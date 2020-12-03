@@ -1,3 +1,4 @@
+package com.example;
 
 public class Extra {
 	protected String type;
