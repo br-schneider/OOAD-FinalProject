@@ -160,16 +160,15 @@ public class Main {
 //        String message = "message" + i;
 
 //        model.addAttribute("messages",
-      output.add("       <div class=\"list-group\">\n" +
-              "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
+      output.add("      <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
               "                <div class=\"d-flex w-100 justify-content-between\">\n" +
               "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
               "                    <small>3 days ago</small>\n" +
               "                </div>\n" +
               "                <p class=\"mb-1\"> + " + make + "</p>\n" +
               "                <small blah\"></small>\n" +
-              "            </a>\n" +
-              "        </div>");
+              "            </a>\n" 
+                );
 //      }
 
 
