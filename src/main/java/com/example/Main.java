@@ -221,23 +221,6 @@ public class Main {
     model.put("car1color", dbCarList.get(0).getColor());
 
 
-//    List<Car> dbCarList = getCarsFromDB();
-//
-////    ArrayList<String> output = new ArrayList<String>();
-//
-//    model.put("car1Title", dbCarList.get(0).printMakeModelYear());
-//    model.put("car1Description", dbCarList.get(0).quickDescription());
-//    model.put("car1Price", dbCarList.get(0).printPricing());
-
-//    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
-//    model.put("car2Description", dbCarList.get(1).quickDescription());
-//    model.put("car2Price", dbCarList.get(1).printPricing());
-//
-//    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
-//    model.put("car3Description", dbCarList.get(2).quickDescription());
-//    model.put("car3Price", dbCarList.get(2).printPricing());
-
-
 
     return "car_inventory";
   }

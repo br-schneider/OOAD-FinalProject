@@ -117,15 +117,24 @@
                 </div>
             </div>
 
-            <input type="text" name="FULL_SEARCH"/>
+            <input type="text" name="FULL_SEARCH"  id="toSearch" hidden="hidden"/>
 
 
 
-            <button type="submit" class="btn btn-outline-dark rounded" name="submit" href="/search_results">Search</button>
 
+            <button type="submit" class="btn btn-outline-dark rounded" name="submit" onclick="getThings()">Search</button>
+
+            <script>
+                function getThings() {
+                    let type1 = document.getElementById("typeFilter").innerHTML;
+                    document.getElementById("toSearch").value = type1;
+                }
+
+            </script>
         </div>
 
         </form>
+        
 
     </div>
 
