@@ -129,6 +129,55 @@ public class Main {
     }
   }
 
+  List<Truck> getTrucksFromDB() {
+    List<Truck> carsList = new ArrayList<Truck>();
+
+    try (Connection connection = dataSource.getConnection()) {
+      String query = "SELECT * FROM car_inventory WHERE car_type like '%Truck%'";
+      Statement stmt = connection.createStatement();
+      ResultSet rs = stmt.executeQuery(query);
+
+      String make, model2, color;
+      int year, mileage;
+      double price;
+
+      while (rs.next()) {
+        make = rs.getString("make");
+        model2 = rs.getString("model");
+        year = rs.getInt("year");
+        mileage = rs.getInt("mileage");
+        color = rs.getString("color");
+        price = rs.getDouble("price");
+
+        Truck testCar = new Truck();
+        testCar.setMake(make);
+        testCar.setModel(model2);
+        testCar.setYear(year);
+        testCar.setMileage(mileage);
+        testCar.setColor(color);
+        testCar.setPrice(price);
+
+        carsList.add(testCar);
+      }
+
+      return carsList;
+
+    } catch (Exception e) {
+      Truck errorCar = new Truck();
+
+      errorCar.setMake("-1");
+      errorCar.setModel("-1");
+      errorCar.setYear(-1);
+      errorCar.setMileage(-1);
+      errorCar.setColor("-1");
+      errorCar.setPrice(-1);
+
+      carsList.add(errorCar);
+
+      return carsList;
+    }
+  }
+
 
   @RequestMapping("/search")
   public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Model model) {
@@ -138,7 +187,7 @@ public class Main {
     int amountOfResults = 0;
 
 
-    if(values[0].equals("Sedan")) {
+    if (values[0].equals("Sedan")) {
       List<Sedan> dbCarList = getSedansFromDB();
       String model2 = "";
       String make = "";
@@ -148,8 +197,8 @@ public class Main {
       ArrayList<String> output = new ArrayList<String>();
 
       for (int i = 0; i < amountOfResults; i++) {
-        double days = Math.round((Math.random() * (30 - 1)) + 1);
-
+        double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+        int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
@@ -167,6 +216,35 @@ public class Main {
 
       return "search";
 
+    }
+    else if (values[0].equals("Truck") ) {
+      List<Truck> dbCarList = getTrucksFromDB();
+      String model2;
+      String make;
+
+      amountOfResults = dbCarList.size();
+
+      ArrayList<String> output = new ArrayList<String>();
+
+      for (int i = 0; i < amountOfResults; i++) {
+        double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+        int days = (int) doubledays;
+        model2 = dbCarList.get(i).getModel();
+        make = dbCarList.get(i).getMake();
+
+        output.add(
+                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                        "                    <small>" + days + "days ago </small>\n" +
+                        "                </div>\n" +
+                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "                <small blah\">blahblah</small>\n"
+        );
+      }
+
+      model.addAttribute("messages", output);
+
+      return "search";
     }
     else {
 
