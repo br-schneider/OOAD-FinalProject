@@ -26,7 +26,7 @@ public class Sedan implements Car{
 
 
     public String getMake() {
-        return make;
+        return "The make chosen is "+make+".";
     }
 
 
@@ -36,7 +36,7 @@ public class Sedan implements Car{
 
 
     public String getModel() {
-    	return model;
+    	return "The model chose is "+model+".";
     }
 
     public void setYear(int year) {
@@ -44,7 +44,7 @@ public class Sedan implements Car{
     }
 
     public int getYear() {
-    	return year;
+    	return year+ " ";
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Sedan implements Car{
 
 
     public String getColor() {
-    	return "The sedan color chosen is "+color+".";
+    	return color+" ";
     }
 
 
@@ -64,7 +64,7 @@ public class Sedan implements Car{
 
 
     public String getMileage() {
-    	return mileage+" ";
+    return "Miles: "+mileage+ " ";
     }
 
 
@@ -74,7 +74,7 @@ public class Sedan implements Car{
 
 
     public String getPrice() {
-    	return price+" ";
+    	return "$"+price+" ";
     }
 
 }

@@ -40,7 +40,7 @@ public class SUV implements Car{
     }
 
     public int getYear() {
-    	return year;
+    	return year+ " ";
     }
 
     public void setColor(String color) {
@@ -48,7 +48,7 @@ public class SUV implements Car{
     }
 
     public String getColor() {
-    	return color;
+    	return color+ " ";
     }
 
     public void setMileage(int mileage) {
@@ -56,7 +56,7 @@ public class SUV implements Car{
     }
 
     public String getMileage() {
-    	return mileage+ " ";
+    	return "Miles: "+mileage+ " ";
     }
 
     public void setPrice(double price) {
@@ -64,7 +64,7 @@ public class SUV implements Car{
     }
 
     public String getPrice() {
-    	return "$"+price+" ";
+    	return " $"+price+" ";
     }
 
 }

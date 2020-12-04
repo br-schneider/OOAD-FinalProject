@@ -340,14 +340,18 @@ public class Main {
         int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
+        year = dbCarList.get(i).getYear();
+        miles = dbCarList.get(i).getMileage();
+        price = dbCarList.get(i).getPrice();
 
         output.add(
-                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                        "                    <small>" + days + " days ago </small>\n" +
-                        "                </div>\n" +
-                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                        "                <small blah\">blahblah</small>\n"
+          "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+          "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+          "                    <small>" + days + " days ago </small>\n" +
+          "                </div>\n" +
+          "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                          "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+          "                <small blah\">blahblah</small>\n"
         );
       }
 
@@ -373,15 +377,19 @@ public class Main {
         int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
+        year = dbCarList.get(i).getYear();
+        miles = dbCarList.get(i).getMileage();
+        price = dbCarList.get(i).getPrice();
 
 
         output.add(
-                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                        "                    <small>" + days + " days ago </small>\n" +
-                        "                </div>\n" +
-                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                        "                <small blah\">blahblah</small>\n"
+          "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+          "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+          "                    <small>" + days + " days ago </small>\n" +
+          "                </div>\n" +
+          "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                          "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+          "                <small blah\">blahblah</small>\n"
         );
       }
 
@@ -407,14 +415,18 @@ public class Main {
         int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
+        year = dbCarList.get(i).getYear();
+        miles = dbCarList.get(i).getMileage();
+        price = dbCarList.get(i).getPrice();
 
         output.add(
-                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                        "                    <small>" + days + " days ago </small>\n" +
-                        "                </div>\n" +
-                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                        "                <small blah\">blahblah</small>\n"
+          "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+          "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+          "                    <small>" + days + " days ago </small>\n" +
+          "                </div>\n" +
+          "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                          "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+          "                <small blah\">blahblah</small>\n"
         );
       }
 
@@ -443,6 +455,9 @@ public class Main {
 
     String model2;
     String make;
+    int year=0;
+    String miles= "";
+    String price = "";
 
     int amountOfSedanResults = SedanDBCarList.size();
     int amountOfCoupeResults = CoupeDBCarList.size();
@@ -456,14 +471,18 @@ public class Main {
       int days = (int) doubledays;
       model2 = SedanDBCarList.get(i).getModel();
       make = SedanDBCarList.get(i).getMake();
+      year = dbCarList.get(i).getYear();
+      miles = dbCarList.get(i).getMileage();
+      price = dbCarList.get(i).getPrice();
 
       output.add(
-              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                      "                    <small>" + days + " days ago </small>\n" +
-                      "                </div>\n" +
-                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                      "                <small blah\">blahblah</small>\n"
+        "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+        "                    <small>" + days + " days ago </small>\n" +
+        "                </div>\n" +
+        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+        "                <small blah\">blahblah</small>\n"
       );
     }
 
@@ -472,14 +491,18 @@ public class Main {
       int days = (int) doubledays;
       model2 = SUVDBCarList.get(i).getModel();
       make = SUVDBCarList.get(i).getMake();
+      year = dbCarList.get(i).getYear();
+      miles = dbCarList.get(i).getMileage();
+      price = dbCarList.get(i).getPrice();
 
       output.add(
-              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                      "                    <small>" + days + " days ago </small>\n" +
-                      "                </div>\n" +
-                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                      "                <small blah\">blahblah</small>\n"
+        "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+        "                    <small>" + days + " days ago </small>\n" +
+        "                </div>\n" +
+        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+        "                <small blah\">blahblah</small>\n"
       );
     }
 
@@ -488,14 +511,18 @@ public class Main {
       int days = (int) doubledays;
       model2 = TruckDBCarList.get(i).getModel();
       make = TruckDBCarList.get(i).getMake();
+      year = dbCarList.get(i).getYear();
+      miles = dbCarList.get(i).getMileage();
+      price = dbCarList.get(i).getPrice();
 
       output.add(
-              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                      "                    <small>" + days + " days ago </small>\n" +
-                      "                </div>\n" +
-                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                      "                <small blah\">blahblah</small>\n"
+        "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+        "                    <small>" + days + " days ago </small>\n" +
+        "                </div>\n" +
+        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+        "                <small blah\">blahblah</small>\n"
       );
     }
 
@@ -504,14 +531,18 @@ public class Main {
       int days = (int) doubledays;
       model2 = CoupeDBCarList.get(i).getModel();
       make = CoupeDBCarList.get(i).getMake();
+      year = dbCarList.get(i).getYear();
+      miles = dbCarList.get(i).getMileage();
+      price = dbCarList.get(i).getPrice();
 
       output.add(
-              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                      "                    <small>" + days + " days ago </small>\n" +
-                      "                </div>\n" +
-                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                      "                <small blah\">blahblah</small>\n"
+        "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+        "                    <small>" + days + " days ago </small>\n" +
+        "                </div>\n" +
+        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
+        "                <small blah\">blahblah</small>\n"
       );
     }
 
