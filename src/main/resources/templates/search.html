@@ -54,9 +54,11 @@
 <!--        </a>-->
 <!--    </div>-->
 
-    <p th:utext="${message123}">
 
-    </p>
+    <ul th:each="message : ${message123}">
+        <li th:utext="${message123}"/>
+    </ul>
+
 </div>
 
 <!--<div class="container" id="fillcars">-->
