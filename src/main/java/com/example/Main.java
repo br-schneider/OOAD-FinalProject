@@ -290,7 +290,9 @@ public class Main {
       List<Sedan> dbCarList = getSedansFromDB();
       String model2 = "";
       String make = "";
-
+      int year=0;
+      int miles= 0;
+      dounle price = 0.0;
       amountOfResults = dbCarList.size();
 
       ArrayList<String> output = new ArrayList<String>();
