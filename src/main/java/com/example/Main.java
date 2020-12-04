@@ -138,7 +138,7 @@ public class Main {
 
 
   @RequestMapping("/search")
-  public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Map<String, Object> model) {
+  public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Model model) {
 
     String[] values = FULL_SEARCH.split(",");
 
@@ -155,9 +155,9 @@ public class Main {
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
-        String message = "message" + i;
+//        String message = "message" + i;
 
-        model.put(message,
+        model.addAttribute("messages",
                 "       <div class=\"list-group\">\n" +
                         "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
