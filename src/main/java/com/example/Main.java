@@ -155,7 +155,7 @@ public class Main {
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
-        model.put("message"+i,
+        model.put("message1",
                 "       <div class=\"list-group\">\n" +
                         "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -175,15 +175,7 @@ public class Main {
 //    else {
 //
 //    }
-
-
-
-
-
-
-    model.put("message1", values[0]);
-    model.put("message2", values[1]);
-    model.put("message3", values[2]);
+    
 
 
     return "search";
