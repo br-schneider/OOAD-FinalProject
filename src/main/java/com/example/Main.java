@@ -151,11 +151,13 @@ public class Main {
 
       amountOfResults = dbCarList.size();
 
+      ArrayList<String> output = new ArrayList<String>();
+
       for (int i = 0; i<amountOfResults+1; i++) {
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
-        model.put("message123",
+        output.add(
                 "       <div class=\"list-group\">\n" +
                         "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -166,7 +168,11 @@ public class Main {
                         "                <small blah\"></small>\n" +
                         "            </a>\n" +
                         "        </div>");
+
+
       }
+
+    model.put("message123", output);
 
 
 
