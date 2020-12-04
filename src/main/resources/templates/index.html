@@ -127,14 +127,16 @@
             <script>
                 function getThings() {
                     let type1 = document.getElementById("typeFilter").innerHTML;
-                    document.getElementById("toSearch").value = type1;
+                    let type2 = document.getElementById("makeFilter").innerHTML;
+                    let type3 = document.getElementById("yearFilter").innerHTML;
+                    document.getElementById("toSearch").value = type1 + "," + type2 + "," + type3;
                 }
 
             </script>
         </div>
 
         </form>
-        
+
 
     </div>
 

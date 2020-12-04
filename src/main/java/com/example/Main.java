@@ -86,7 +86,14 @@ public class Main {
 
   @RequestMapping("/search")
   public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Map<String, Object> model) {
-    model.put("message1", FULL_SEARCH);
+
+    String[] values = FULL_SEARCH.split(",");
+
+
+
+    model.put("message1", values[0]);
+    model.put("message2", values[1]);
+    model.put("message3", values[2]);
 
 
     return "search";
