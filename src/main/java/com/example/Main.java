@@ -219,35 +219,34 @@ public class Main {
 
     }
     else if (values[0].equals("Truck") ) {
-      testFactory.getTrucksFromDB();
 
-//      List<Truck> dbCarList = getTrucksFromDB();
-//      String model2;
-//      String make;
-//
-//      amountOfResults = dbCarList.size();
-//
-//      ArrayList<String> output = new ArrayList<String>();
-//
-//      for (int i = 0; i < amountOfResults; i++) {
-//        double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
-//        int days = (int) doubledays;
-//        model2 = dbCarList.get(i).getModel();
-//        make = dbCarList.get(i).getMake();
-//
-//        output.add(
-//                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-//                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-//                        "                    <small>" + days + " days ago </small>\n" +
-//                        "                </div>\n" +
-//                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
-//                        "                <small blah\">blahblah</small>\n"
-//        );
-//      }
-//
-//      model.addAttribute("messages", output);
-//
-//      return "search";
+      List<Truck> dbCarList = getTrucksFromDB();
+      String model2;
+      String make;
+
+      amountOfResults = dbCarList.size();
+
+      ArrayList<String> output = new ArrayList<String>();
+
+      for (int i = 0; i < amountOfResults; i++) {
+        double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+        int days = (int) doubledays;
+        model2 = dbCarList.get(i).getModel();
+        make = dbCarList.get(i).getMake();
+
+        output.add(
+                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                        "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                        "                    <small>" + days + " days ago </small>\n" +
+                        "                </div>\n" +
+                        "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                        "                <small blah\">blahblah</small>\n"
+        );
+      }
+
+      model.addAttribute("messages", output);
+
+      return "search";
     }
     else {
 
