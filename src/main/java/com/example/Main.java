@@ -44,6 +44,12 @@ public class Main {
 
   @RequestMapping("/")
   String index(Map<String, Object> model) {
+
+    return "index";
+  }
+
+  @RequestMapping("/observer_pattern")
+  public String search(Map<String, Object> model) {
     //testFunction();
 
     CarFactory carFactory = new CarFactory();
@@ -73,9 +79,9 @@ public class Main {
     model.put("message6", mtest.getCost());
     model.put("message7", rims1.getCost());
 
-
-    return "index";
+    return "observer_pattern";
   }
+
 
 
   @RequestMapping("/search")
