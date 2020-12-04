@@ -422,81 +422,90 @@ public class Main {
 
 
 
-
-
-//  @RequestMapping("/db")
-//  String db(Map<String, Object> model) {
-//    try (Connection connection = dataSource.getConnection()) {
-//      Statement stmt = connection.createStatement();
-//      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-//      stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-//      ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-//
-//      ArrayList<String> output = new ArrayList<String>();
-//      while (rs.next()) {
-//        output.add("Read from DB: " + rs.getTimestamp("tick"));
-//      }
-//
-//      model.put("records", output);
-//      return "db";
-//    } catch (Exception e) {
-//      model.put("message", e.getMessage());
-//      return "error";
-//    }
-//  }
-
-
-//  List<Car> getCarsFromDB() {
-//    List<Car> carsList = new ArrayList<Car>();
-//
-//    try (Connection connection = dataSource.getConnection()) {
-//      String query = "SELECT * FROM car_inventory";
-//      Statement stmt = connection.createStatement();
-//      ResultSet rs = stmt.executeQuery(query);
-//
-//      String type, make, model2, color;
-//      int year, mileage;
-//      double price;
-//
-//      swtich:
-//        if truck:
-//            truck truck = new truck (adsfasdfas)
-//
-//
-//      while (rs.next()) {
-//        type = rs.getString("type");
-//        make = rs.getString("make");
-//        model2 = rs.getString("model");
-//        year = rs.getInt("year");
-//        mileage = rs.getInt("mileage");
-//        color = rs.getString("color");
-//        price = rs.getDouble("price");
-//
-//        Car testCar = new Car(type, make, model2, year, mileage, color, price);
-//        carsList.add(testCar);
-//      }
-//
-//      return carsList;
-//
-//    } catch (Exception e) {
-//      Car errorCar = new Car("-1", "-1", "-1", -1, -1, "-1", -1);
-//      carsList.add(errorCar);
-//
-//      return carsList;
-//    }
-//  }
-
-
-
-
   @RequestMapping("/car_inventory")
-  String car_inventory(Map<String, Object> model) {
-    List<Sedan> dbCarList = getSedansFromDB();
+  String car_inventory(Model model) {
+    List<Sedan> SedanDBCarList = getSedansFromDB();
+    List<Coupe> CoupeDBCarList = getCoupesFromDB();
+    List<Truck> TruckDBCarList = getTrucksFromDB();
+    List<SUV> SUVDBCarList = getSUVsFromDB();
+
+    String model2;
+    String make;
+
+    int amountOfSedanResults = SedanDBCarList.size();
+    int amountOfCoupeResults = CoupeDBCarList.size();
+    int amountOfTruckResults = TruckDBCarList.size();
+    int amountOfSUVResults = SUVDBCarList.size();
+
+    ArrayList<String> output = new ArrayList<String>();
+
+    for (int i = 0; i < amountOfSedanResults; i++) {
+      double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+      int days = (int) doubledays;
+      model2 = SedanDBCarList.get(i).getModel();
+      make = SedanDBCarList.get(i).getMake();
+
+      output.add(
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                      "                    <small>" + days + " days ago </small>\n" +
+                      "                </div>\n" +
+                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                      "                <small blah\">blahblah</small>\n"
+      );
+    }
+
+    for (int i = 0; i < amountOfSUVResults; i++) {
+      double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+      int days = (int) doubledays;
+      model2 = SUVDBCarList.get(i).getModel();
+      make = SUVDBCarList.get(i).getMake();
+
+      output.add(
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                      "                    <small>" + days + " days ago </small>\n" +
+                      "                </div>\n" +
+                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                      "                <small blah\">blahblah</small>\n"
+      );
+    }
+
+    for (int i = 0; i < amountOfTruckResults; i++) {
+      double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+      int days = (int) doubledays;
+      model2 = TruckDBCarList.get(i).getModel();
+      make = TruckDBCarList.get(i).getMake();
+
+      output.add(
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                      "                    <small>" + days + " days ago </small>\n" +
+                      "                </div>\n" +
+                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                      "                <small blah\">blahblah</small>\n"
+      );
+    }
+
+    for (int i = 0; i < amountOfCoupeResults; i++) {
+      double doubledays = Math.round((Math.random() * (30 - 1)) + 1);
+      int days = (int) doubledays;
+      model2 = CoupeDBCarList.get(i).getModel();
+      make = CoupeDBCarList.get(i).getMake();
+
+      output.add(
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                      "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                      "                    <small>" + days + " days ago </small>\n" +
+                      "                </div>\n" +
+                      "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                      "                <small blah\">blahblah</small>\n"
+      );
+    }
 
 
-    model.put("car1make", dbCarList.get(0).getMake());
-    model.put("car1model", dbCarList.get(0).getModel());
-    model.put("car1color", dbCarList.get(0).getColor());
+
+    model.addAttribute("messages", output);
 
 
 
