@@ -116,7 +116,7 @@ public class Main {
 //    }
 //  }
 
-//
+
 //  List<Car> getCarsFromDB() {
 //    List<Car> carsList = new ArrayList<Car>();
 //
@@ -128,6 +128,11 @@ public class Main {
 //      String type, make, model2, color;
 //      int year, mileage;
 //      double price;
+//
+//      swtich:
+//        if truck:
+//            truck truck = new truck (adsfasdfas)
+//
 //
 //      while (rs.next()) {
 //        type = rs.getString("type");
@@ -152,9 +157,52 @@ public class Main {
 //    }
 //  }
 
+  List<Sedan> getSedansFromDB() {
+    List<Sedan> carsList = new ArrayList<Sedan>();
 
-//  @RequestMapping("/car_inventory")
-//  String car_inventory(Map<String, Object> model) {
+    try (Connection connection = dataSource.getConnection()) {
+      String query = "SELECT * FROM car_inventory";
+      Statement stmt = connection.createStatement();
+      ResultSet rs = stmt.executeQuery(query);
+
+      String make, model2, color;
+      int year, mileage;
+      double price;
+
+
+      while (rs.next()) {
+        make = rs.getString("make");
+        model2 = rs.getString("model");
+        year = rs.getInt("year");
+        mileage = rs.getInt("mileage");
+        color = rs.getString("color");
+        price = rs.getDouble("price");
+
+        Sedan testCar = new Sedan();
+        carsList.add(testCar);
+      }
+
+      return carsList;
+
+    } catch (Exception e) {
+      Sedan errorCar = new Sedan();
+      carsList.add(errorCar);
+
+      return carsList;
+    }
+  }
+
+
+  @RequestMapping("/car_inventory")
+  String car_inventory(Map<String, Object> model) {
+    List<Sedan> dbCarList = getSedansFromDB();
+
+
+    model.put("car1make", dbCarList.get(0).getMake());
+    model.put("car1model", dbCarList.get(0).getModel());
+    model.put("car1color", dbCarList.get(0).getColor());
+
+
 //    List<Car> dbCarList = getCarsFromDB();
 //
 ////    ArrayList<String> output = new ArrayList<String>();
@@ -162,19 +210,19 @@ public class Main {
 //    model.put("car1Title", dbCarList.get(0).printMakeModelYear());
 //    model.put("car1Description", dbCarList.get(0).quickDescription());
 //    model.put("car1Price", dbCarList.get(0).printPricing());
+
+//    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
+//    model.put("car2Description", dbCarList.get(1).quickDescription());
+//    model.put("car2Price", dbCarList.get(1).printPricing());
 //
-////    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
-////    model.put("car2Description", dbCarList.get(1).quickDescription());
-////    model.put("car2Price", dbCarList.get(1).printPricing());
-////
-////    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
-////    model.put("car3Description", dbCarList.get(2).quickDescription());
-////    model.put("car3Price", dbCarList.get(2).printPricing());
-//
-//
-//
-//    return "car_inventory";
-//  }
+//    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
+//    model.put("car3Description", dbCarList.get(2).quickDescription());
+//    model.put("car3Price", dbCarList.get(2).printPricing());
+
+
+
+    return "car_inventory";
+  }
 
 
 
