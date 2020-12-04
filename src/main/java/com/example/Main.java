@@ -327,6 +327,9 @@ public class Main {
       List<Truck> dbCarList = getTrucksFromDB();
       String model2;
       String make;
+      int year=0;
+      String miles= "";
+      String price = "";
 
       amountOfResults = dbCarList.size();
 
@@ -357,6 +360,9 @@ public class Main {
       List<SUV> dbCarList = getSUVsFromDB();
       String model2;
       String make;
+      int year=0;
+      String miles= "";
+      String price = "";
 
       amountOfResults = dbCarList.size();
 
@@ -367,6 +373,7 @@ public class Main {
         int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
+
 
         output.add(
                 "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -387,6 +394,9 @@ public class Main {
       List<Coupe> dbCarList = getCoupesFromDB();
       String model2;
       String make;
+      int year=0;
+      String miles= "";
+      String price = "";
 
       amountOfResults = dbCarList.size();
 

@@ -1,7 +1,7 @@
 package com.example;
 
 public class Sedan implements Car{
-	
+
 	String make;
 	String model;
 	int year;
@@ -16,65 +16,65 @@ public class Sedan implements Car{
         this.year = 0;
         this.color = "";
         this.mileage = 0;
-        this.price = 0.00;  
+        this.price = 0.00;
     }
-     
- 
+
+
     public void setMake(String make) {
         this.make = make;
     }
- 
-    
+
+
     public String getMake() {
         return make;
     }
-    
-    
+
+
     public void setModel(String model) {
     	this.model = model;
     }
-    
-    
+
+
     public String getModel() {
     	return model;
     }
-    
+
     public void setYear(int year) {
     	this.year = year;
     }
-    
+
     public int getYear() {
     	return year;
     }
-    
+
     @Override
     public void setColor(String color) {
     	this.color = color;
     }
-    
-    
+
+
     public String getColor() {
     	return "The sedan color chosen is "+color+".";
     }
-    
-    
+
+
     public void setMileage(int mileage) {
     	this.mileage = mileage;
     }
-    
-    
+
+
     public String getMileage() {
-    	return "The sedan mileage of the chosen car is "+mileage+".";
+    	return mileage+" ";
     }
-    
-    
+
+
     public void setPrice(double price) {
     	this.price = price;
     }
-    
-    
+
+
     public String getPrice() {
-    	return "The sedan price for the car chosen is "+price+".";
+    	return price+" ";
     }
-    
+
 }
