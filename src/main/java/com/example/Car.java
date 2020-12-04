@@ -1,67 +1,34 @@
 package com.example;
 
-public class Car {
-    String type;
-    String make;
-    String model;
-    int year;
-    int mileage;
-    String color;
-    double price;
-
-    public Car(String type, String make, String model,int year,int mileage, String color, double price) {
-        this.type = type;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.mileage = mileage;
-        this.color = color;
-        this.price = price;
-    }
-
-    String getType() {
-        return type;
-    }
-
-    String getMake() {
-        return make;
-    }
-
-    String getModel() {
-        return model;
-    }
-    int getYear() {
-        return year;
-    }
-
-    int getMileage() {
-        return mileage;
-    }
-
-    String getColor() {
-        return color;
-    }
-
-    Double getPrice() {
-        return price;
-    }
-
-    String printCar() {
-        return ("Type: " + type + ",  Make: " + make + ",  Model: " + model + ",  Year: " + Integer.toString(year)
-                + ",  Mileage: " + Integer.toString(mileage) + ",  Color: " +color + ",  Price: $" + Double.toString(price)
-                +  "\r\n");
-    }
-
-    String printMakeModelYear() {
-        return (Integer.toString(year) + " " + make + " " + model);
-    }
-
-    String quickDescription() {
-        return ("This " + make + " " + model + " is " + color + " and has " + Integer.toString(mileage) + " miles on it!");
-    }
-
-    String printPricing() {
-        return("Priced at $" + price + "");
-    }
+public interface Car {
+	
+	public void setMake(String make);
+	public String getMake();
+	
+	public void setModel(String model);
+	public String getModel();
+	
+	public void setYear(int year);
+	public String getYear();
+	
+	public void setColor(String color);
+	public String getColor();
+	
+	public void setMileage(int mileage);
+	public String getMileage();
+	
+	public void setPrice(double price);
+	public String getPrice();
+		
+//	public Car(String type, String make, String model,int year,int mileage, String color, double price) {
+//		this.type = type;
+//		this.make = make;
+//		this.model = model;
+//		this.year = year;
+//		this.mileage = mileage;
+//		this.color = color;
+//		this.price = price;
+//		// TODO Auto-generated constructor stub
+//	}
 
 }

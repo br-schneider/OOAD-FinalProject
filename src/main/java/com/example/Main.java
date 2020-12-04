@@ -38,9 +38,42 @@ public class Main {
 
   //////////////////////////////////////////////Start Of Where to Work//////////////////////////////////////////////////
 
+//  public void testFunction() {
+//
+//  }
 
   @RequestMapping("/")
-  String index() {
+  String index(Map<String, Object> model) {
+    //testFunction();
+
+    CarFactory carFactory = new CarFactory();
+
+    Car car1 = carFactory.getCar("sedan");
+    car1.setMake("toyota");
+    car1.setModel("Corolla");
+    car1.setColor("Black");
+    car1.setMileage(19981);
+    car1.setYear(2020);
+    car1.setPrice(17999.99);
+
+
+    model.put("message1", car1.getMake());
+    model.put("message2", car1.getColor());
+    model.put("message3", car1.getYear());
+    model.put("message4", car1.getPrice());
+    model.put("message5", car1.getMileage());
+
+    Extra etest = new Extra("sony", 120);
+
+    Stereo mtest = new Stereo(etest);
+
+    Extra test = new Extra("enkei",50);
+    Rims rims1 = new Rims(test);
+
+    model.put("message6", mtest.getCost());
+    model.put("message7", rims1.getCost());
+
+
     return "index";
   }
 
@@ -52,6 +85,9 @@ public class Main {
 
     return "search";
   }
+
+
+
 
 //  @RequestMapping("/db")
 //  String db(Map<String, Object> model) {
@@ -74,65 +110,65 @@ public class Main {
 //    }
 //  }
 
-
-  List<Car> getCarsFromDB() {
-    List<Car> carsList = new ArrayList<Car>();
-
-    try (Connection connection = dataSource.getConnection()) {
-      String query = "SELECT * FROM car_inventory";
-      Statement stmt = connection.createStatement();
-      ResultSet rs = stmt.executeQuery(query);
-
-      String type, make, model2, color;
-      int year, mileage;
-      double price;
-
-      while (rs.next()) {
-        type = rs.getString("type");
-        make = rs.getString("make");
-        model2 = rs.getString("model");
-        year = rs.getInt("year");
-        mileage = rs.getInt("mileage");
-        color = rs.getString("color");
-        price = rs.getDouble("price");
-
-        Car testCar = new Car(type, make, model2, year, mileage, color, price);
-        carsList.add(testCar);
-      }
-
-      return carsList;
-
-    } catch (Exception e) {
-      Car errorCar = new Car("-1", "-1", "-1", -1, -1, "-1", -1);
-      carsList.add(errorCar);
-
-      return carsList;
-    }
-  }
-
-
-  @RequestMapping("/car_inventory")
-  String car_inventory(Map<String, Object> model) {
-    List<Car> dbCarList = getCarsFromDB();
-
-//    ArrayList<String> output = new ArrayList<String>();
-
-    model.put("car1Title", dbCarList.get(0).printMakeModelYear());
-    model.put("car1Description", dbCarList.get(0).quickDescription());
-    model.put("car1Price", dbCarList.get(0).printPricing());
-
-//    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
-//    model.put("car2Description", dbCarList.get(1).quickDescription());
-//    model.put("car2Price", dbCarList.get(1).printPricing());
 //
-//    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
-//    model.put("car3Description", dbCarList.get(2).quickDescription());
-//    model.put("car3Price", dbCarList.get(2).printPricing());
+//  List<Car> getCarsFromDB() {
+//    List<Car> carsList = new ArrayList<Car>();
+//
+//    try (Connection connection = dataSource.getConnection()) {
+//      String query = "SELECT * FROM car_inventory";
+//      Statement stmt = connection.createStatement();
+//      ResultSet rs = stmt.executeQuery(query);
+//
+//      String type, make, model2, color;
+//      int year, mileage;
+//      double price;
+//
+//      while (rs.next()) {
+//        type = rs.getString("type");
+//        make = rs.getString("make");
+//        model2 = rs.getString("model");
+//        year = rs.getInt("year");
+//        mileage = rs.getInt("mileage");
+//        color = rs.getString("color");
+//        price = rs.getDouble("price");
+//
+//        Car testCar = new Car(type, make, model2, year, mileage, color, price);
+//        carsList.add(testCar);
+//      }
+//
+//      return carsList;
+//
+//    } catch (Exception e) {
+//      Car errorCar = new Car("-1", "-1", "-1", -1, -1, "-1", -1);
+//      carsList.add(errorCar);
+//
+//      return carsList;
+//    }
+//  }
 
 
-
-    return "car_inventory";
-  }
+//  @RequestMapping("/car_inventory")
+//  String car_inventory(Map<String, Object> model) {
+//    List<Car> dbCarList = getCarsFromDB();
+//
+////    ArrayList<String> output = new ArrayList<String>();
+//
+//    model.put("car1Title", dbCarList.get(0).printMakeModelYear());
+//    model.put("car1Description", dbCarList.get(0).quickDescription());
+//    model.put("car1Price", dbCarList.get(0).printPricing());
+//
+////    model.put("car2Title", dbCarList.get(1).printMakeModelYear());
+////    model.put("car2Description", dbCarList.get(1).quickDescription());
+////    model.put("car2Price", dbCarList.get(1).printPricing());
+////
+////    model.put("car3Title", dbCarList.get(2).printMakeModelYear());
+////    model.put("car3Description", dbCarList.get(2).quickDescription());
+////    model.put("car3Price", dbCarList.get(2).printPricing());
+//
+//
+//
+//    return "car_inventory";
+//  }
 
 
 
