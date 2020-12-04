@@ -42,16 +42,20 @@
     </nav>
 </div>
 
-<div class="container">
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1" th:text="${message1}"></h5>
-                <small>3 days ago</small>
-            </div>
-            <p class="mb-1" th:text="${message2}"></p>
-            <small th:text="${message3}"></small>
-        </a>
+<div class="container" id="fillCars">
+<!--    <div class="list-group">-->
+<!--        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">-->
+<!--            <div class="d-flex w-100 justify-content-between">-->
+<!--                <h5 class="mb-1" th:text="${message1}"></h5>-->
+<!--                <small>3 days ago</small>-->
+<!--            </div>-->
+<!--            <p class="mb-1" th:text="${message2}"></p>-->
+<!--            <small th:text="${message3}"></small>-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <div th:remove="tag" th:utext="${message123}">
+
     </div>
 </div>
 

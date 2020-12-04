@@ -83,11 +83,98 @@ public class Main {
   }
 
 
+  List<Sedan> getSedansFromDB() {
+    List<Sedan> carsList = new ArrayList<Sedan>();
+
+    try (Connection connection = dataSource.getConnection()) {
+      String query = "SELECT * FROM car_inventory";
+      Statement stmt = connection.createStatement();
+      ResultSet rs = stmt.executeQuery(query);
+
+      String make, model2, color;
+      int year, mileage;
+      double price;
+
+
+      while (rs.next()) {
+        make = rs.getString("make");
+        model2 = rs.getString("model");
+        year = rs.getInt("year");
+        mileage = rs.getInt("mileage");
+        color = rs.getString("color");
+        price = rs.getDouble("price");
+
+        Sedan testCar = new Sedan();
+        testCar.setMake(make);
+        testCar.setModel(model2);
+        testCar.setYear(year);
+        testCar.setMileage(mileage);
+        testCar.setColor(color);
+        testCar.setPrice(price);
+
+
+        carsList.add(testCar);
+      }
+
+
+
+      return carsList;
+
+    } catch (Exception e) {
+      Sedan errorCar = new Sedan();
+
+      errorCar.setMake("-1");
+      errorCar.setModel("-1");
+      errorCar.setYear(-1);
+      errorCar.setMileage(-1);
+      errorCar.setColor("-1");
+      errorCar.setPrice(-1);
+
+      carsList.add(errorCar);
+
+      return carsList;
+    }
+  }
+
 
   @RequestMapping("/search")
   public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Map<String, Object> model) {
 
     String[] values = FULL_SEARCH.split(",");
+
+    int amountOfResults =0;
+
+    if(values[0] == "Sedan") {
+      List<Sedan> dbCarList = getSedansFromDB();
+      String model2 ="";
+      String make ="";
+
+      amountOfResults = dbCarList.size();
+
+      for (int i = 0; i<amountOfResults; i++) {
+        model2 = dbCarList.get(i).getModel();
+        make = dbCarList.get(i).getMake();
+      }
+
+      model.put("message123", "        <div class=\"list-group\">\n" +
+              "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+              "                    <h5 class=\"mb-1\" +" +  model2 +"></h5>\n" +
+              "                    <small>3 days ago</small>\n" +
+              "                </div>\n" +
+              "                <p class=\"mb-1\" " + make + "></p>\n" +
+              "                <small blah\"></small>\n" +
+              "            </a>\n" +
+              "        </div>");
+
+
+    }
+    else {
+
+    }
+
+
+
 
 
 
@@ -164,58 +251,7 @@ public class Main {
 //    }
 //  }
 
-  List<Sedan> getSedansFromDB() {
-    List<Sedan> carsList = new ArrayList<Sedan>();
 
-    try (Connection connection = dataSource.getConnection()) {
-      String query = "SELECT * FROM car_inventory";
-      Statement stmt = connection.createStatement();
-      ResultSet rs = stmt.executeQuery(query);
-
-      String make, model2, color;
-      int year, mileage;
-      double price;
-
-
-      while (rs.next()) {
-        make = rs.getString("make");
-        model2 = rs.getString("model");
-        year = rs.getInt("year");
-        mileage = rs.getInt("mileage");
-        color = rs.getString("color");
-        price = rs.getDouble("price");
-
-        Sedan testCar = new Sedan();
-        testCar.setMake(make);
-        testCar.setModel(model2);
-        testCar.setYear(year);
-        testCar.setMileage(mileage);
-        testCar.setColor(color);
-        testCar.setPrice(price);
-
-
-        carsList.add(testCar);
-      }
-
-
-
-      return carsList;
-
-    } catch (Exception e) {
-      Sedan errorCar = new Sedan();
-
-      errorCar.setMake("-1");
-      errorCar.setModel("-1");
-      errorCar.setYear(-1);
-      errorCar.setMileage(-1);
-      errorCar.setColor("-1");
-      errorCar.setPrice(-1);
-
-      carsList.add(errorCar);
-
-      return carsList;
-    }
-  }
 
 
   @RequestMapping("/car_inventory")
