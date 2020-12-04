@@ -179,13 +179,31 @@ public class Main {
         price = rs.getDouble("price");
 
         Sedan testCar = new Sedan();
+        testCar.setMake(make);
+        testCar.setModel(model2);
+        testCar.setYear(year);
+        testCar.setMileage(mileage);
+        testCar.setColor(color);
+        testCar.setPrice(price);
+
+
         carsList.add(testCar);
       }
+
+
 
       return carsList;
 
     } catch (Exception e) {
       Sedan errorCar = new Sedan();
+
+      errorCar.setMake("-1");
+      errorCar.setModel("-1");
+      errorCar.setYear(-1);
+      errorCar.setMileage(-1);
+      errorCar.setColor("-1");
+      errorCar.setPrice(-1);
+
       carsList.add(errorCar);
 
       return carsList;
