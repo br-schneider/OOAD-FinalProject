@@ -471,9 +471,9 @@ public class Main {
       int days = (int) doubledays;
       model2 = SedanDBCarList.get(i).getModel();
       make = SedanDBCarList.get(i).getMake();
-      year = dbCarList.get(i).getYear();
-      miles = dbCarList.get(i).getMileage();
-      price = dbCarList.get(i).getPrice();
+      year = SedanDBCarList.get(i).getYear();
+      miles = SedanDBCarList.get(i).getMileage();
+      price = SedanDBCarList.get(i).getPrice();
 
       output.add(
         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -491,9 +491,9 @@ public class Main {
       int days = (int) doubledays;
       model2 = SUVDBCarList.get(i).getModel();
       make = SUVDBCarList.get(i).getMake();
-      year = dbCarList.get(i).getYear();
-      miles = dbCarList.get(i).getMileage();
-      price = dbCarList.get(i).getPrice();
+      year = SUVDBCarList.get(i).getYear();
+      miles = SUVDBCarList.get(i).getMileage();
+      price = SUVDBCarList.get(i).getPrice();
 
       output.add(
         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -511,9 +511,9 @@ public class Main {
       int days = (int) doubledays;
       model2 = TruckDBCarList.get(i).getModel();
       make = TruckDBCarList.get(i).getMake();
-      year = dbCarList.get(i).getYear();
-      miles = dbCarList.get(i).getMileage();
-      price = dbCarList.get(i).getPrice();
+      year = TruckDBCarList.get(i).getYear();
+      miles = TruckDBCarList.get(i).getMileage();
+      price = TruckDBList.get(i).getPrice();
 
       output.add(
         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -531,9 +531,9 @@ public class Main {
       int days = (int) doubledays;
       model2 = CoupeDBCarList.get(i).getModel();
       make = CoupeDBCarList.get(i).getMake();
-      year = dbCarList.get(i).getYear();
-      miles = dbCarList.get(i).getMileage();
-      price = dbCarList.get(i).getPrice();
+      year = CoupeDBCarList.get(i).getYear();
+      miles = CoupeDBCarList.get(i).getMileage();
+      price = CoupeDBCarList.get(i).getPrice();
 
       output.add(
         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
