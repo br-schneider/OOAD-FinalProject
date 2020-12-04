@@ -300,6 +300,9 @@ public class Main {
         int days = (int) doubledays;
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
+        year = dbCarList.get(i).getYear();
+        miles = dbCarList.get(i).getMileage();
+        price = dbCarList.get(i).getPrice();
 
         output.add(
           "                <div class=\"d-flex w-100 justify-content-between\">\n" +
@@ -307,6 +310,7 @@ public class Main {
           "                    <small>" + days + " days ago </small>\n" +
           "                </div>\n" +
           "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                          "<h5 class=\"mb-1\" >" + year + miles + price + "</h5>\n" +
           "                <small blah\">blahblah</small>\n"
         );
       }
