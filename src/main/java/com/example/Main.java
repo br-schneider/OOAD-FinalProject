@@ -87,7 +87,7 @@ public class Main {
     List<Sedan> carsList = new ArrayList<Sedan>();
 
     try (Connection connection = dataSource.getConnection()) {
-      String query = "SELECT * FROM car_inventory";
+      String query = "SELECT * FROM car_inventory WHERE car_type like '%Sedan%'";
       Statement stmt = connection.createStatement();
       ResultSet rs = stmt.executeQuery(query);
 
@@ -162,8 +162,8 @@ public class Main {
                 "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
                 "                    <small>3 days ago</small>\n" +
                 "                </div>\n" +
-                "                <p class=\"mb-1\"> + " + make + "</p>\n" +
-                "                <small blah\"></small>\n"
+                "                <p class=\"mb-1\"> " + make + "</p>\n" +
+                "                <small blah\">blahblah</small>\n"
 //                "         </a>\n"
         );
       }
