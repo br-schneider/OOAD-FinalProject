@@ -156,7 +156,8 @@ public class Main {
         make = dbCarList.get(i).getMake();
       }
 
-      model.put("message123", "        <div class=\"list-group\">\n" +
+      model.put("message123",
+              "       <div class=\"list-group\">\n" +
               "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
               "                <div class=\"d-flex w-100 justify-content-between\">\n" +
               "                    <h5 class=\"mb-1\" +" +  model2 +"></h5>\n" +
