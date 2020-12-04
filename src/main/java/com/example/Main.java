@@ -144,7 +144,7 @@ public class Main {
 
     int amountOfResults = 0;
 
-//  if(values[0] == "Sedan") {
+  if(values[0] == "Sedan") {
     List<Sedan> dbCarList = getSedansFromDB();
     String model2 = "";
     String make = "";
@@ -169,20 +169,21 @@ public class Main {
               "                <small blah\"></small>\n" +
               "         </a>\n"
                 );
-//      }
-
-
-//    }
-//    else {
-//
-//    }
-
-    }
+        }
 
     model.addAttribute("messages", output);
 
     return "search";
+
+    }
+    else {
+
+    }
+
+
+    return "?";
   }
+
 
 
 
