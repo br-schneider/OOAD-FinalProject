@@ -44,7 +44,7 @@ public class Sedan implements Car{
     }
 
     public int getYear() {
-    	return year+ " ";
+    	return year;
     }
 
     @Override

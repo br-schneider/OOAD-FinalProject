@@ -40,7 +40,7 @@ public class Truck implements Car{
     }
 
     public int getYear() {
-    	return year+ " ";
+    	return year;
     }
 
     public void setColor(String color) {

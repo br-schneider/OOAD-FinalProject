@@ -513,7 +513,7 @@ public class Main {
       make = TruckDBCarList.get(i).getMake();
       year = TruckDBCarList.get(i).getYear();
       miles = TruckDBCarList.get(i).getMileage();
-      price = TruckDBList.get(i).getPrice();
+      price = TruckDBCarList.get(i).getPrice();
 
       output.add(
         "                <div class=\"d-flex w-100 justify-content-between\">\n" +
