@@ -142,35 +142,35 @@ public class Main {
 
     String[] values = FULL_SEARCH.split(",");
 
-    int amountOfResults =0;
+    int amountOfResults = 0;
 
 //  if(values[0] == "Sedan") {
-      List<Sedan> dbCarList = getSedansFromDB();
-      String model2 ="";
-      String make ="";
+    List<Sedan> dbCarList = getSedansFromDB();
+    String model2 = "";
+    String make = "";
 
-      amountOfResults = dbCarList.size();
+    amountOfResults = dbCarList.size();
 
-      for (int i = 0; i<amountOfResults; i++) {
-        model2 = dbCarList.get(i).getModel();
-        make = dbCarList.get(i).getMake();
+    ArrayList<String> output = new ArrayList<String>();
+
+    for (int i = 0; i < amountOfResults; i++) {
+      model2 = dbCarList.get(i).getModel();
+      make = dbCarList.get(i).getMake();
 
 //        String message = "message" + i;
 
-        model.addAttribute("messages",
-                "       <div class=\"list-group\">\n" +
-                        "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
-                        "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                        "                    <h5 class=\"mb-1\" >"+model2+"</h5>\n" +
-                        "                    <small>3 days ago</small>\n" +
-                        "                </div>\n" +
-                        "                <p class=\"mb-1\"> + " + make +"</p>\n" +
-                        "                <small blah\"></small>\n" +
-                        "            </a>\n" +
-                        "        </div>");
-      }
-
-
+//        model.addAttribute("messages",
+      output.add("       <div class=\"list-group\">\n" +
+              "            <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
+              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+              "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+              "                    <small>3 days ago</small>\n" +
+              "                </div>\n" +
+              "                <p class=\"mb-1\"> + " + make + "</p>\n" +
+              "                <small blah\"></small>\n" +
+              "            </a>\n" +
+              "        </div>");
+//      }
 
 
 //    }
@@ -178,7 +178,9 @@ public class Main {
 //
 //    }
 
+    }
 
+    model.addAttribute("message", output);
 
     return "search";
   }
