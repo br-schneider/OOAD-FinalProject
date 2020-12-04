@@ -144,36 +144,33 @@ public class Main {
 
     int amountOfResults = 0;
 
-  if(values[0].equals("Sedan")) {
-    List<Sedan> dbCarList = getSedansFromDB();
-    String model2 = "";
-    String make = "";
+    if(values[0].equals("Sedan")) {
+      List<Sedan> dbCarList = getSedansFromDB();
+      String model2 = "";
+      String make = "";
 
-    amountOfResults = dbCarList.size();
+      amountOfResults = dbCarList.size();
 
-    ArrayList<String> output = new ArrayList<String>();
+      ArrayList<String> output = new ArrayList<String>();
 
-    for (int i = 0; i < amountOfResults; i++) {
-      model2 = dbCarList.get(i).getModel();
-      make = dbCarList.get(i).getMake();
+      for (int i = 0; i < amountOfResults; i++) {
+        model2 = dbCarList.get(i).getModel();
+        make = dbCarList.get(i).getMake();
 
-//        String message = "message" + i;
+        output.add(/*"     <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +*/
+                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+                "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+                "                    <small>3 days ago</small>\n" +
+                "                </div>\n" +
+                "                <p class=\"mb-1\"> + " + make + "</p>\n" +
+                "                <small blah\"></small>\n"
+//                "         </a>\n"
+        );
+      }
 
-//        model.addAttribute("messages",
-      output.add("      <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
-              "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-              "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-              "                    <small>3 days ago</small>\n" +
-              "                </div>\n" +
-              "                <p class=\"mb-1\"> + " + make + "</p>\n" +
-              "                <small blah\"></small>\n" +
-              "         </a>\n"
-                );
-        }
+      model.addAttribute("messages", output);
 
-    model.addAttribute("messages", output);
-
-    return "search";
+      return "search";
 
     }
     else {
@@ -295,7 +292,7 @@ public class Main {
 
 
 
- //////////////////////////////////////////////End Of Where to Work/////////////////////////////////////////////////////
+  //////////////////////////////////////////////End Of Where to Work/////////////////////////////////////////////////////
 
 
   @Bean

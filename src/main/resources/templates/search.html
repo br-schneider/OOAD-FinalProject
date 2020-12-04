@@ -47,11 +47,13 @@
 <!--</ul>-->
 
 <div class="container" id="fillCars">
-    <div class="list-group">
+    <div class="list-group" >
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" th:each="message : ${messages}">
 <!--        <p th:utext="${message}"></p>-->
-        <h2 th:each="message : ${messages}">
+<!--        <h2 th:each="message : ${messages}">-->
             <p th:utext="${message}"></p>
-        </h2>
+<!--        </h2>-->
+        </a>
     </div>
 </div>
 </body>
