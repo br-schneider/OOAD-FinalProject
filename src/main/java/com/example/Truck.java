@@ -39,8 +39,8 @@ public class Truck implements Car{
     	this.year = year;
     }
     
-    public String getYear() {
-    	return "The car year chosen is "+year+".";
+    public int getYear() {
+    	return year;
     }
     
     public void setColor(String color) {

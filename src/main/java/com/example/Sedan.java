@@ -26,7 +26,7 @@ public class Sedan implements Car{
  
     
     public String getMake() {
-        return "The sedan make chosen is "+make+".";
+        return make;
     }
     
     
@@ -36,16 +36,15 @@ public class Sedan implements Car{
     
     
     public String getModel() {
-    	return "The sedan model chose is "+model+".";
+    	return model;
     }
     
     public void setYear(int year) {
     	this.year = year;
     }
     
-    
-    public String getYear() {
-    	return "The sedan year chosen is "+year+".";
+    public int getYear() {
+    	return year;
     }
     
     @Override

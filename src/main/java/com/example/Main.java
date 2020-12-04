@@ -167,7 +167,7 @@ public class Main {
               "                </div>\n" +
               "                <p class=\"mb-1\"> + " + make + "</p>\n" +
               "                <small blah\"></small>\n" +
-              "            </a>\n" 
+              "         </a>\n"
                 );
 //      }
 
@@ -179,7 +179,7 @@ public class Main {
 
     }
 
-    model.addAttribute("message", output);
+    model.addAttribute("messages", output);
 
     return "search";
   }

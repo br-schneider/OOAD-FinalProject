@@ -9,7 +9,7 @@ public interface Car {
 	public String getModel();
 	
 	public void setYear(int year);
-	public String getYear();
+	public int getYear();
 	
 	public void setColor(String color);
 	public String getColor();
