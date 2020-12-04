@@ -38,9 +38,6 @@ public class Main {
 
   //////////////////////////////////////////////Start Of Where to Work//////////////////////////////////////////////////
 
-//  public void testFunction() {
-//
-//  }
 
   @RequestMapping("/")
   String index(Map<String, Object> model) {
@@ -95,7 +92,6 @@ public class Main {
       int year, mileage;
       double price;
 
-
       while (rs.next()) {
         make = rs.getString("make");
         model2 = rs.getString("model");
@@ -112,11 +108,8 @@ public class Main {
         testCar.setColor(color);
         testCar.setPrice(price);
 
-
         carsList.add(testCar);
       }
-
-
 
       return carsList;
 
@@ -143,6 +136,7 @@ public class Main {
     String[] values = FULL_SEARCH.split(",");
 
     int amountOfResults = 0;
+    double days = (Math.random() * (30 - 1)) + 1;
 
     if(values[0].equals("Sedan")) {
       List<Sedan> dbCarList = getSedansFromDB();
@@ -157,14 +151,13 @@ public class Main {
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
-        output.add(/*"     <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +*/
-                "                <div class=\"d-flex w-100 justify-content-between\">\n" +
-                "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
-                "                    <small>3 days ago</small>\n" +
-                "                </div>\n" +
-                "                <p class=\"mb-1\"> " + make + "</p>\n" +
-                "                <small blah\">blahblah</small>\n"
-//                "         </a>\n"
+        output.add(
+          "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+          "                    <h5 class=\"mb-1\" >" + model2 + "</h5>\n" +
+          "                    <small>" + days + "days ago </small>\n" +
+          "                </div>\n" +
+          "                <p class=\"mb-1\"> " + make + "</p>\n" +
+          "                <small blah\">blahblah</small>\n"
         );
       }
 
