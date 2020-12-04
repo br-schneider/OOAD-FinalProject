@@ -151,7 +151,7 @@ public class Main {
 
       amountOfResults = dbCarList.size();
 
-      for (int i = 0; i<amountOfResults; i++) {
+      for (int i = 0; i<amountOfResults+1; i++) {
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
