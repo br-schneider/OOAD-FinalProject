@@ -136,7 +136,7 @@ public class Main {
     String[] values = FULL_SEARCH.split(",");
 
     int amountOfResults = 0;
-    double days = (Math.random() * (30 - 1)) + 1;
+
 
     if(values[0].equals("Sedan")) {
       List<Sedan> dbCarList = getSedansFromDB();
@@ -148,6 +148,8 @@ public class Main {
       ArrayList<String> output = new ArrayList<String>();
 
       for (int i = 0; i < amountOfResults; i++) {
+        double days = Math.round((Math.random() * (30 - 1)) + 1);
+
         model2 = dbCarList.get(i).getModel();
         make = dbCarList.get(i).getMake();
 
