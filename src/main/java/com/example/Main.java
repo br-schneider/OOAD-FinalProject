@@ -291,8 +291,8 @@ public class Main {
       String model2 = "";
       String make = "";
       int year=0;
-      int miles= 0;
-      dounle price = 0.0;
+      string miles= "";
+      string price = "";
       amountOfResults = dbCarList.size();
 
       ArrayList<String> output = new ArrayList<String>();
