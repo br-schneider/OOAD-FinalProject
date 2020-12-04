@@ -229,7 +229,7 @@ public class Main {
 
 
   @RequestMapping("/search")
-  public String search(@RequestParam(defaultValue="Guest") String FULL_SEARCH, Model model) {
+  public String search(@RequestParam(defaultValue="errorSearch") String FULL_SEARCH, Model model) {
     CarFactory testFactory = new CarFactory();
 
     String[] values = FULL_SEARCH.split(",");
@@ -328,7 +328,9 @@ public class Main {
       return "search";
     }
     else {
-
+      model.addAttribute("messages", "                <div class=\"d-flex w-100 justify-content-between\">\n" +
+              "                    <h1 class=\"mb-1\" > No Results :(</h1>\n" +
+              "                </div>\n");
     }
 
 
