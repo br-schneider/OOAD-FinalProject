@@ -1,0 +1,17 @@
+We have 9 sedans left
+We have 9 coupes left
+We have 8 coupes left
+We have 9 trucks left
+We have 9 sports cars left
+We have 8 trucks left
+We have 8 sports cars left
+We have 9 hatchbacks left
+We have 9 SUVs left
+We have 7 sports cars left
+We have 6 sports cars left
+We have 5 sports cars left
+We have 4 sports cars left
+We have 3 sports cars left
+We have 2 sports cars left
+We have 1 sports cars left
+We have 0 sports cars left
